@@ -1143,3 +1143,764 @@
             </div>
         </div>
     </div>
+<div id="rubric-explore" class="page">
+        <div class="explorer-container">
+            <aside class="explorer-sidebar" id="explorerSidebar">
+                <div class="explorer-sidebar-header">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                        Rubric Explorer
+                    </h3>
+                </div>
+                <nav class="explorer-nav">
+                    <a class="explorer-nav-item" onclick="loadExplorerContent('overview')" id="nav-overview">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        Overview
+                    </a>
+
+                    <div class="explorer-pillar">
+                        <div class="explorer-pillar-header" onclick="loadExplorerContent('structure')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            Structure
+                        </div>
+                        <div class="explorer-signal structure">
+                            <a onclick="loadExplorerContent('s1')" id="nav-s1">S1 - Required Auditor's Report Section Structure</a>
+                        </div>
+                        <div class="explorer-signal structure">
+                            <a onclick="loadExplorerContent('s2')" id="nav-s2">S2 - Management's Assertion Completeness</a>
+                        </div>
+                        <div class="explorer-signal structure">
+                            <a onclick="loadExplorerContent('s3')" id="nav-s3">S3 - Inconsistent Language Across Report Sections</a>
+                        </div>
+                    </div>
+
+                    <div class="explorer-pillar">
+                        <div class="explorer-pillar-header" onclick="loadExplorerContent('substance')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path><path d="M11 8a3 3 0 0 0-3 3"></path></svg>
+                            Substance
+                        </div>
+                        <div class="explorer-signal substance">
+                            <a onclick="loadExplorerContent('s4')" id="nav-s4">S4 - System Description Specificity</a>
+                        </div>
+                        <div class="explorer-signal substance">
+                            <a onclick="loadExplorerContent('s5')" id="nav-s5">S5 - Control-to-Criteria Mapping Logic</a>
+                        </div>
+                        <div class="explorer-signal substance">
+                            <a onclick="loadExplorerContent('s6')" id="nav-s6">S6 - Vague or Conflicting Control Descriptions</a>
+                        </div>
+                        <div class="explorer-signal substance">
+                            <a onclick="loadExplorerContent('s7')" id="nav-s7">S7 - Test Procedure Detail and Specificity</a>
+                        </div>
+                    </div>
+
+                    <div class="explorer-pillar">
+                        <div class="explorer-pillar-header" onclick="loadExplorerContent('source')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            Source
+                        </div>
+                        <div class="explorer-signal source">
+                            <a onclick="loadExplorerContent('s8')" id="nav-s8">S8 - CPA Firm Registration, Peer Review Enrollment & Results</a>
+                        </div>
+                        <div class="explorer-signal source">
+                            <a onclick="loadExplorerContent('s9')" id="nav-s9">S9 - CPA-to-SOC Reports Issued Ratio</a>
+                        </div>
+                        <div class="explorer-signal source">
+                            <a onclick="loadExplorerContent('s10')" id="nav-s10">S10 - CPA Firm Leadership & Report Signer Experience</a>
+                        </div>
+                        <div class="explorer-signal source">
+                            <a onclick="loadExplorerContent('s11')" id="nav-s11">S11 - Use of a GRC Tool</a>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+
+            <main class="explorer-content" id="explorerContent">
+                <!-- Content loads here dynamically -->
+            </main>
+
+            <button class="explorer-mobile-toggle" id="explorerMobileToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="responding" class="page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Responding to Quality Issues</h2>
+                <p>Eight practical approaches for addressing report quality concerns</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">1</div>
+                <h3>Focus on Education, Not Accusations</h3>
+                <p>Approach vendors with curiosity and clarity, not blame. Many well-meaning vendors operating strong security programs may not understand what a high-quality SOC 2 report means, or were guided into a low-rigor audit by cost or sales pressure. Use this as an opportunity to enhance the relationship and grow their understanding.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">2</div>
+                <h3>Communicate with the Vendor</h3>
+                <p>Don't silently downgrade trust. If material concerns are identified, explain what you're seeing and why it matters. Clear, specific feedback helps vendors improve and strengthens trust across the ecosystem. Frame it as: "This year we can do a manual review since the report wasn't of acceptable quality — we'll need to see specific changes in the next report to accept it."</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">3</div>
+                <h3>Involve Stakeholders Early</h3>
+                <p>Business owners, risk owners, and technical stakeholders need to be involved from the start. These teams are most impacted by delayed approvals, compensating controls, and risk acceptance — and often have critical context that informs the final decision.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">4</div>
+                <h3>Apply a Risk-Based Lens</h3>
+                <p>Not all vendors carry the same risk. Consider data sensitivity, access level, deployment model, and business criticality. A low-impact vendor may warrant lighter scrutiny than a mission-critical system.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">5</div>
+                <h3>Identify Practical Mitigations</h3>
+                <p>If the report isn't sufficient, consider alternatives before rejection. Request supplemental evidence for key controls, limit production access or scope of deployment, or delay rollout until improvements are made. Even partial approval or constrained adoption can create strong incentives to improve audit quality in future cycles. This approach also reaffirms a GRC team as a business enabler that makes risk-based decisions rather than the Team of No.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">6</div>
+                <h3>Use Commercial and Contractual Levers</h3>
+                <p>When a SOC 2 report cannot be reasonably relied upon, additional assurance work may be necessary. The cost of supplemental reviews, evidence requests, or ongoing monitoring can be addressed through contract terms, negotiations, or security addenda. This may include requiring a higher-quality auditor in future cycles, mandating specific controls or audit procedures, or pricing in the additional cost of oversight. Your ACV and TCV as a client will significantly impact your ability to negotiate favorable terms.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">7</div>
+                <h3>Engage the Auditor</h3>
+                <p>The audit community gets very little feedback from report consumers. Constructive engagement with specific concerns can improve future audits — not just for one vendor, but for the broader ecosystem.</p>
+            </div>
+
+            <div class="response-card">
+                <div class="response-number">8</div>
+                <h3>Document the Evaluation</h3>
+                <p>Whether risk is mitigated, transferred, or accepted, document the rationale. This is ultimately a risk-based exercise, and documentation supports your own governance obligations and business needs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects" class="page">
+        <div class="container">
+            <div class="section-header">
+                <h2>Community Projects</h2>
+                <p>Vote on and contribute to initiatives that improve the SOC 2 ecosystem</p>
+            </div>
+
+            <div id="projectsList"></div>
+        </div>
+    </div>
+
+    <div id="about" class="page">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Guild</h2>
+            </div>
+
+            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Mission</h3>
+            <p style="margin-bottom: 2rem;">The SOC 2 Quality Guild is a practitioner-driven community creating standardized evaluation criteria for SOC 2 audit report quality. We exist because practitioners deserve shared, objective ways to assess the reliability of the trust signals they depend on every day.</p>
+
+            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Why This Matters</h3>
+            <p style="margin-bottom: 2rem;">SOC 2 has become the most widely adopted security assurance framework for SaaS companies. But rapid growth in demand has created a quality gap — reports vary dramatically in rigor, and the ecosystem lacks standardized ways to tell the difference. TPRM teams are left making decisions based on vibes, anecdotal experience, or brand recognition rather than observable, verifiable signals. By giving practitioners the tools to consistently evaluate report quality, we can create market pressure that improves outcomes for everyone — vendors, auditors, and the organizations that rely on their work.</p>
+
+            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Approach</h3>
+            <p style="margin-bottom: 2rem;">We focus on education, not accusations. Our frameworks evaluate the reliability of reports as evidence — not the trustworthiness of individual vendors or auditors. We provide repeatable, verifiable signals that any practitioner can apply, regardless of experience level.</p>
+
+            <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Get Involved</h3>
+            <p style="margin-bottom: 1rem;">The Guild is open to GRC practitioners, TPRM professionals, auditors, and anyone who cares about improving the quality of security assurance.</p>
+            <p style="margin-bottom: 2rem;">
+                <a href="https://github.com/SOC-2-Quality-Guild" style="color: var(--teal); font-weight: 600; text-decoration: none;">GitHub</a> · 
+                <a href="#" style="color: var(--teal); font-weight: 600; text-decoration: none;">Slack</a>
+            </p>
+
+            <div class="license-box">
+                <h3>License</h3>
+                <p>This work is licensed under CC BY-SA 4.0. © 2026 SOC 2 Quality Guild.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>© 2026 SOC 2 Quality Guild · CC BY-SA 4.0</div>
+            <div class="footer-links">
+                <a href="https://github.com/SOC-2-Quality-Guild">GitHub</a>
+                <a href="#">Slack</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        function navigate(page) {
+            window.location.hash = page;
+        }
+
+        function handleRoute() {
+            const hash = window.location.hash.slice(1) || 'home';
+            const pages = document.querySelectorAll('.page');
+            
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            const targetPage = document.getElementById(hash.split('-')[0]);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            document.getElementById('navLinks').classList.remove('active');
+
+            // If navigating to rubric-explore, load default content
+            if (hash === 'rubric-explore') {
+                setTimeout(() => loadExplorerContent('overview'), 100);
+            }
+        }
+
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('load', handleRoute);
+
+        // Mobile nav toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Resources dropdown
+        document.getElementById('resourcesDropdown').addEventListener('click', function(e) {
+            if (e.target.closest('.dropdown-toggle')) {
+                this.classList.toggle('active');
+                e.stopPropagation();
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            const dropdown = document.getElementById('resourcesDropdown');
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Explorer mobile toggle
+        document.getElementById('explorerMobileToggle').addEventListener('click', function() {
+            document.getElementById('explorerSidebar').classList.toggle('active');
+        });
+
+        // Explorer content loader
+        function loadExplorerContent(contentId) {
+            const content = document.getElementById('explorerContent');
+            
+            // Update active state in sidebar
+            document.querySelectorAll('.explorer-nav-item, .explorer-signal a').forEach(item => {
+                item.classList.remove('active');
+            });
+            const navItem = document.getElementById('nav-' + contentId);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+
+            // Close mobile sidebar
+            document.getElementById('explorerSidebar').classList.remove('active');
+
+            const contentMap = {
+                'overview': `
+                    <div class="guide-box">
+                        <h2>How to Use This Rubric</h2>
+                        <p>This rubric contains 11 signals across three pillars to evaluate SOC 2 report quality:</p>
+                        
+                        <div class="guide-pillars">
+                            <div class="guide-pillar-item">
+                                <div class="guide-pillar-icon structure">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                </div>
+                                <div class="guide-pillar-text">
+                                    <h4>Structure (3 signals)</h4>
+                                    <p>Professional standards compliance</p>
+                                </div>
+                            </div>
+
+                            <div class="guide-pillar-item">
+                                <div class="guide-pillar-icon substance">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path><path d="M11 8a3 3 0 0 0-3 3"></path></svg>
+                                </div>
+                                <div class="guide-pillar-text">
+                                    <h4>Substance (4 signals)</h4>
+                                    <p>Audit work rigor and logic</p>
+                                </div>
+                            </div>
+
+                            <div class="guide-pillar-item">
+                                <div class="guide-pillar-icon source">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                                </div>
+                                <div class="guide-pillar-text">
+                                    <h4>Source (4 signals)</h4>
+                                    <p>Auditor credibility factors</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="guide-divider">
+
+                        <div class="guide-instructions">
+                            <ul>
+                                <li>Click any pillar name for an overview of what it evaluates</li>
+                                <li>Click any signal for detailed evaluation checks</li>
+                                <li>Colored borders in the sidebar show pillar grouping</li>
+                                <li>Navigate freely — your position is always visible</li>
+                            </ul>
+                        </div>
+                    </div>
+                `,
+                'structure': `
+                    <h1 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        Structure
+                    </h1>
+                    <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">Does the report include required components and maintain professional consistency?</p>
+                    
+                    <p style="margin-bottom: 2rem;">Structure failures indicate the report may not meet professional standards. These checks verify the report contains all AICPA-required components and maintains internal consistency.</p>
+
+                    <div class="card-grid">
+                        <a class="card-link" onclick="loadExplorerContent('s1')">
+                            <div class="card">
+                                <span class="badge badge-signal">S1</span>
+                                <h3>Required Auditor's Report Section Structure</h3>
+                                <p>AICPA standards mandate specific paragraphs in the Auditor's Report.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s2')">
+                            <div class="card">
+                                <span class="badge badge-signal">S2</span>
+                                <h3>Management's Assertion Completeness</h3>
+                                <p>Management must formally assert system accuracy and control effectiveness.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s3')">
+                            <div class="card">
+                                <span class="badge badge-signal">S3</span>
+                                <h3>Inconsistent Language Across Report Sections</h3>
+                                <p>Inconsistencies indicate weak editorial control or lack of holistic review.</p>
+                            </div>
+                        </a>
+                    </div>
+                `,
+                'substance': `
+                    <h1 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path><path d="M11 8a3 3 0 0 0-3 3"></path></svg>
+                        Substance
+                    </h1>
+                    <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">Do the controls, testing, and conclusions logically align and support each other?</p>
+                    
+                    <p style="margin-bottom: 2rem;">Substance failures mean the documented work doesn't support the conclusions. These checks evaluate whether the audit work itself was rigorous and meaningful.</p>
+
+                    <div class="card-grid">
+                        <a class="card-link" onclick="loadExplorerContent('s4')">
+                            <div class="card">
+                                <span class="badge badge-signal">S4</span>
+                                <h3>System Description Specificity</h3>
+                                <p>Section 3 should name actual products, technology stack, and organizational structure.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s5')">
+                            <div class="card">
+                                <span class="badge badge-signal">S5</span>
+                                <h3>Control-to-Criteria Mapping Logic</h3>
+                                <p>Each control should logically map to its assigned Trust Services Criteria.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s6')">
+                            <div class="card">
+                                <span class="badge badge-signal">S6</span>
+                                <h3>Vague or Conflicting Control Descriptions</h3>
+                                <p>Clear controls specify what happens, who does it, how often, and what makes it effective.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s7')">
+                            <div class="card">
+                                <span class="badge badge-signal">S7</span>
+                                <h3>Test Procedure Detail and Specificity</h3>
+                                <p>Test descriptions should show what evidence was examined and how it was verified.</p>
+                            </div>
+                        </a>
+                    </div>
+                `,
+                'source': `
+                    <h1 style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        Source
+                    </h1>
+                    <p style="font-size: 1.125rem; color: var(--gray-600); margin-bottom: 2rem;">What credentials, independence factors, and track record may affect report credibility?</p>
+                    
+                    <p style="margin-bottom: 2rem;">Source failures suggest factors that undermine independence or credibility. These checks evaluate the audit firm itself — its qualifications, oversight, and potential conflicts of interest.</p>
+
+                    <div class="card-grid">
+                        <a class="card-link" onclick="loadExplorerContent('s8')">
+                            <div class="card">
+                                <span class="badge badge-signal">S8</span>
+                                <h3>CPA Firm Registration, Peer Review Enrollment & Results</h3>
+                                <p>The audit firm must be registered and pass peer review every three years.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s9')">
+                            <div class="card">
+                                <span class="badge badge-signal">S9</span>
+                                <h3>CPA-to-SOC Reports Issued Ratio</h3>
+                                <p>A high ratio of reports per CPA may indicate a signature mill.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s10')">
+                            <div class="card">
+                                <span class="badge badge-signal">S10</span>
+                                <h3>CPA Firm Leadership & Report Signer Experience</h3>
+                                <p>Leadership experience determines whether quality is prioritized over volume.</p>
+                            </div>
+                        </a>
+                        <a class="card-link" onclick="loadExplorerContent('s11')">
+                            <div class="card">
+                                <span class="badge badge-signal">S11</span>
+                                <h3>Use of a GRC Tool</h3>
+                                <p>Tools promising instant compliance may signal commodity audits over substance.</p>
+                            </div>
+                        </a>
+                    </div>
+                `,
+                's1': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S1</span>
+                        <span class="badge badge-pillar structure">Structure</span>
+                    </div>
+                    <h1>Required Auditor's Report Section Structure</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>AICPA standards mandate specific paragraphs in the Auditor's Report: Scope, Opinion, and for Type 2, Description of Tests of Controls. Missing or incorrect paragraphs indicate the auditor is unaware of basic standard requirements or took shortcuts.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Scan the Auditor's Report section (Section 1 or 2) for labeled paragraphs: Scope, Opinion, and Description of Tests</li>
+                            <li>For Type 2, verify there's a paragraph referencing tests in Section 4</li>
+                            <li>Check that the Opinion clearly states whether controls were suitably designed and operating effectively</li>
+                            <li>A qualified opinion will typically have an explanatory paragraph, then say "Except for the matters above…" — indicating the opinion has been qualified</li>
+                            <li>Ensure the opinions reflect the most recent format published by the AICPA</li>
+                        </ol>
+                    </div>
+                `,
+                's2': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S2</span>
+                        <span class="badge badge-pillar structure">Structure</span>
+                    </div>
+                    <h1>Management's Assertion Completeness</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Management must formally assert their system description is accurate, controls are suitably designed, and (for Type 2) operating effectively. Missing or incomplete assertions mean management hasn't taken responsibility for their control environment per AICPA standards.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Find Management's Assertion in Section 1 or as a separate section</li>
+                            <li>Verify it includes all required elements and is signed by company leadership</li>
+                            <li>If missing, incomplete, or unsigned, the report doesn't meet basic standards — request a complete version before proceeding with your assessment</li>
+                        </ol>
+                    </div>
+                `,
+                's3': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S3</span>
+                        <span class="badge badge-pillar structure">Structure</span>
+                    </div>
+                    <h1>Inconsistent Language Across Report Sections</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Inconsistencies across report sections indicate copy-paste reuse, weak editorial control, or lack of holistic auditor review. These discrepancies tell us the audit firm either did not understand and evaluate the actual environment, or did not prioritize the report user's clarity of understanding when drafting the report.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Compare systems described across Sections 1, 3, and 4 for alignment</li>
+                            <li>Watch for control frequencies that change between sections (e.g., "quarterly" in Section 3 but "annual" testing in Section 4)</li>
+                            <li>Look for different system names used to describe the same environment</li>
+                            <li>Check for services or activities that are kept out of scope but suddenly appear in other sections (e.g., org chart doesn't have a CISO but CISO is mentioned elsewhere)</li>
+                        </ol>
+                    </div>
+                `,
+                's4': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S4</span>
+                        <span class="badge badge-pillar substance">Substance</span>
+                    </div>
+                    <h1>System Description Specificity</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Section 3 should name actual products, technology stack components, infrastructure providers, and organizational structure. Generic buzzwords that could describe any company suggest the auditor didn't engage with the real environment.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Look for specific details: AWS/Azure/GCP, named SaaS tools, data center locations, organizational charts, architecture diagrams, subservice organizations involved in providing services, and policies and procedures</li>
+                            <li>If it reads like marketing copy you could paste to any company, the auditor likely didn't test to the precision you'd expect</li>
+                            <li>Cross-reference against what you know about the vendor's actual tech stack (website details, questionnaire, subprocessor list, etc.) and other SOC 2 reports by the same auditor</li>
+                            <li>Ensure the System Description is consistent with the products or services described on the vendor's website or marketing materials</li>
+                            <li>Scrutinize descriptions with a very specific boundary that seems to exclude key pieces of the environment — e.g., a healthtech SaaS tool that excludes any details about third parties that process PHI</li>
+                        </ol>
+                    </div>
+
+                    <div class="pro-tip">
+                        <strong>Pro Tip:</strong> The three dominant cloud providers all have Trust & Safety portals where clients with appropriate permissions can download officially signed compliance reports: AWS Artifact (https://aws.amazon.com/compliance/soc-faqs/), Azure Service Trust Portal (https://servicetrust.microsoft.com/), Google Cloud Trust Center (https://cloud.google.com/trust-center).
+                    </div>
+                `,
+                's5': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S5</span>
+                        <span class="badge badge-pillar substance">Substance</span>
+                    </div>
+                    <h1>Control-to-Criteria Mapping Logic</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Each control maps to Trust Services Criteria (like CC6.1 for logical access). Illogical mappings — like "annual meetings" mapped to technical access controls — suggest the auditor didn't think critically about what controls actually accomplish.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Spot-check 10 control mappings and ask: does this control logically address this criterion?</li>
+                            <li>Flag cases where technical controls are mapped to wrong categories or soft controls are used for hard technical requirements</li>
+                            <li>Document questionable mappings and probe whether those areas are well-designed — poor mapping can mask control gaps and fail to ensure the audit properly tested an important control</li>
+                        </ol>
+                    </div>
+                `,
+                's6': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S6</span>
+                        <span class="badge badge-pillar substance">Substance</span>
+                    </div>
+                    <h1>Vague or Conflicting Control Descriptions</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Vague controls like "Management maintains security" don't tell you what's actually happening. Clear controls specify what happens, who does it, how often, and what makes it effective. Controls that contradict each other indicate at least one is ineffective or inaccurately described.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>A well-designed control should answer five questions: What is done? How is it done? Who does it? When is it done? Where is it done?</li>
+                            <li>Look for controls requiring approvals that other controls explicitly bypass</li>
+                            <li>Watch for overlapping controls with different populations (e.g., "all users" vs "excluding service accounts" vs "no contractors")</li>
+                            <li>Check for contradictions — e.g., one section says developers have no production data access, another mentions limited production data access</li>
+                            <li>Review controls side by side in Section 3 and trace testing to Section 4</li>
+                        </ol>
+                    </div>
+
+                    <div class="callout">
+                        <p><strong>Good example:</strong> "Security team reviews production access quarterly, validates business justification with managers, removes unjustified access within 24 hours."</p>
+                        <p><strong>Bad example:</strong> "Access is reviewed periodically."</p>
+                    </div>
+                `,
+                's7': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S7</span>
+                        <span class="badge badge-pillar substance">Substance</span>
+                    </div>
+                    <h1>Test Procedure Detail and Specificity</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Vague test descriptions like "reviewed evidence" or "inspected evidence" are unhelpful. Look for testing descriptions that indicate the test itself was reperformed or observed. Also ensure sample sizes are large enough to provide meaningful confidence. An unqualified report despite extensive exceptions can indicate conflict avoidance or pressure to preserve the client relationship.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Pick 5–7 controls critical to your use case and read their test procedures line by line</li>
+                            <li>Look for: what evidence was examined, how many samples, from what time periods, what specifically was verified</li>
+                            <li>If procedures are interchangeable boilerplate that could apply at any company, flag these controls and request direct evidence from the vendor</li>
+                            <li>Samples should be selected from multiple dates during the monitoring period to ensure continuous assurance</li>
+                            <li>For technical controls (MFA, encryption), look for testing of configuration and system-generated evidence</li>
+                            <li>For periodic controls (quarterly reviews), verify all instances were tested</li>
+                            <li>Count exceptions across Section 4 and assess whether exceptions are pervasive and/or impact core security objectives — challenge whether the opinion appropriately reflects the severity</li>
+                            <li>Scrutinize non-occurring controls — ensure the audit firm disclosed meaningful validation to justify the non-occurrence</li>
+                        </ol>
+                    </div>
+                `,
+                's8': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S8</span>
+                        <span class="badge badge-pillar source">Source</span>
+                    </div>
+                    <h1>CPA Firm Registration, Peer Review Enrollment & Results</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>The audit firm must be registered as a CPA firm with its respective State Board. The firm must be enrolled in the AICPA Peer Review Program and pass peer review every three years. Failures here indicate the audit may not be subject to proper oversight, and the final report may not meet AICPA quality standards.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Find the firm name, firm signature, and home state at the bottom of Section 1 or Section 2</li>
+                            <li>Verify registration at NASBA's CPAVerify tool (https://ald.nasba.org/search/cpa) — the official nationwide firm lookup service</li>
+                            <li>If you can't confirm the firm is licensed, reject the report and communicate to the vendor that you cannot accept a SOC 2 from an unlicensed CPA firm</li>
+                            <li>Search the AICPA Peer Review public file (https://peerreview.aicpa.org) to validate enrollment — if the firm doesn't appear, they are not enrolled; reject the report</li>
+                            <li>If enrolled, ensure the Report Rating is "Pass" and the acceptance date is not older than three years</li>
+                            <li>New CPA firms have 18 months after their first attestation report to complete their first peer review — if outside that window, follow up for assurance on timing</li>
+                        </ol>
+                    </div>
+
+                    <div class="pro-tip">
+                        <strong>Note:</strong> NASBA does not currently cover these states — search their Boards of Accountancy directly: ND (https://ndsba.certemy.com/public-registry/cb166e46-8bb1-44ea-acc3-8ef342c9a845) · NE (https://nbpa.certemy.com/public-registry/4c8599b3-bab3-4b24-bd62-0dc83232cb10) · NY (https://eservices.nysed.gov/professions/verification-search) · PA (https://www.pals.pa.gov/#!/page/search) · WV (https://www.boa.wv.gov/verifications/index.asp) · WY (https://online.wycpaboard.org/#/VerifyLicense)
+                    </div>
+                `,
+                's9': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S9</span>
+                        <span class="badge badge-pillar source">Source</span>
+                    </div>
+                    <h1>CPA-to-SOC Reports Issued Ratio</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Auditing standards require a licensed CPA to sign off on every SOC report. A high ratio of reports per CPA suggests the firm may be operating as a "signature mill" without prioritizing quality.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Look up the CPA firm on LinkedIn and confirm how many licensed CPAs work there</li>
+                            <li>Research the firm to estimate the number of SOC reports they issue per year</li>
+                            <li>If the ratio of licensed CPAs to SOC reports issued per year is greater than 50:1, this is a signal that quality may not be prioritized</li>
+                            <li>Factor this into your assessment and ask for supplemental evidence</li>
+                        </ol>
+                    </div>
+                `,
+                's10': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S10</span>
+                        <span class="badge badge-pillar source">Source</span>
+                    </div>
+                    <h1>CPA Firm Leadership & Report Signer Experience</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>CPA leadership determines whether a firm operates as an independent guardian of security or a high-volume audit mill. Their oversight dictates whether staff apply rigorous professional skepticism or simply follow automated checklists. Report quality rests on leadership's willingness to prioritize their professional license and technical accuracy over easy revenue.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Research the firm's founders, managing partner, and report-signing CPAs on LinkedIn for sufficient SOC 2 audit experience</li>
+                            <li>Check for AICPA membership and recognition</li>
+                            <li>Look for certified professionals: CFE (Certified Fraud Examiner), CISSP (Certified Information Systems Security Professional), CISA (Certified Information Systems Auditor)</li>
+                            <li>Evaluate industry experience relevant to your vendor's sector (healthcare, financial services, SaaS, etc.)</li>
+                            <li>Assess process transparency — does the firm share clear timelines, document requests, and readiness assessments before fieldwork begins?</li>
+                        </ol>
+                    </div>
+                `,
+                's11': `
+                    <div class="signal-badges">
+                        <span class="badge badge-signal">S11</span>
+                        <span class="badge badge-pillar source">Source</span>
+                    </div>
+                    <h1>Use of a GRC Tool</h1>
+
+                    <div class="why-box">
+                        <h3>Why It Matters</h3>
+                        <p>Some GRC tools market "instant" SOC 2 compliance, promising audits in hours or days and guaranteeing a "pass." Such marketing often signals a commodity audit that prioritizes speed over substance.</p>
+                    </div>
+
+                    <div class="steps">
+                        <h3>What To Look For</h3>
+                        <ol>
+                            <li>Check the vendor's Trust Center — in many instances, the vendor is using the GRC tool's Trust Center product, revealing which tool they use</li>
+                            <li>If the vendor doesn't have a Trust Center, inquire directly about which GRC tool they used</li>
+                            <li>Research the tool's website for marketing claims: "SOC 2 in days, hours, or weeks" signals rushed risk assessments</li>
+                            <li>Look for "Audit-Ready Guarantee" or "100% Success Rate" — this signals a check-the-box culture where the auditor acts as a rubber stamp</li>
+                            <li>Check if the tool has a list of "preferred auditors" — if the vendor's auditor is on that list, their independence may be weakened by a high-volume, automated business model</li>
+                            <li>Factor findings into your assessment and ask for supplemental evidence</li>
+                        </ol>
+                    </div>
+                `
+            };
+
+            content.innerHTML = contentMap[contentId] || contentMap['overview'];
+            content.scrollTop = 0;
+        }
+
+        // Community Projects
+        const projectsData = [
+            { id: 1, title: "Concrete examples of each signal in practice — as seen in the wild", votes: 24, comments: 8 },
+            { id: 2, title: "Example language templates for each Tactical Response", votes: 19, comments: 5 },
+            { id: 3, title: "Abbreviated peer review checklist for validating report structure", votes: 16, comments: 3 },
+            { id: 4, title: "Scoring rubric — structured scale for each signal area", votes: 14, comments: 11 },
+            { id: 5, title: "Canadian CPA firm evaluation guidance", votes: 9, comments: 4 },
+            { id: 6, title: "Expand beyond SOC 2: ISO 27001, HITRUST, PCI quality signals", votes: 7, comments: 6 }
+        ];
+
+        function getVotes() {
+            const stored = localStorage.getItem('projectVotes');
+            return stored ? JSON.parse(stored) : {};
+        }
+
+        function saveVotes(votes) {
+            localStorage.setItem('projectVotes', JSON.stringify(votes));
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('projectsList');
+            const votes = getVotes();
+            
+            const sortedProjects = [...projectsData].sort((a, b) => {
+                const aVotes = a.votes + (votes[a.id] || 0);
+                const bVotes = b.votes + (votes[b.id] || 0);
+                return bVotes - aVotes;
+            });
+            
+            container.innerHTML = sortedProjects.map(project => {
+                const hasVoted = votes[project.id] === 1;
+                const currentVotes = project.votes + (votes[project.id] || 0);
+                
+                return `
+                    <div class="project-item">
+                        <div class="vote-container">
+                            <button class="vote-btn ${hasVoted ? 'voted' : ''}" onclick="toggleVote(${project.id})">
+                                ▲
+                            </button>
+                            <div class="vote-count">${currentVotes}</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title">${project.title}</div>
+                            <div class="project-meta">${project.comments} comments</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function toggleVote(projectId) {
+            const votes = getVotes();
+            
+            if (votes[projectId] === 1) {
+                votes[projectId] = 0;
+            } else {
+                votes[projectId] = 1;
+            }
+            
+            saveVotes(votes);
+            renderProjects();
+        }
+
+        renderProjects();
+    </script>
+</body>
+</html>
