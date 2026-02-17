@@ -6,8 +6,11 @@
     <title>SOC 2 Quality Guild</title>
     
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -606,6 +609,47 @@
             flex: 1;
             padding: 3rem;
             overflow-y: auto;
+            position: relative;
+        }
+
+        .explorer-nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .nav-arrow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-arrow-btn:hover {
+            background: var(--gray-50);
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+
+        .nav-arrow-btn.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .nav-arrow-btn svg {
+            width: 20px;
+            height: 20px;
         }
 
         .explorer-mobile-toggle {
@@ -639,9 +683,10 @@
                 transition: left 0.3s;
                 z-index: 998;
                 box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+                background: var(--white);
             }
 
-            .explorer-sidebar.active {
+            .explorer-sidebar.mobile-active {
                 left: 0;
             }
 
@@ -1409,15 +1454,34 @@
 
         // Explorer mobile toggle
         document.getElementById('explorerMobileToggle').addEventListener('click', function() {
-            document.getElementById('explorerSidebar').classList.toggle('active');
+            document.getElementById('explorerSidebar').classList.toggle('mobile-active');
+        });
+
+        // Close mobile sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('explorerSidebar');
+            const toggle = document.getElementById('explorerMobileToggle');
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(e.target) && 
+                !toggle.contains(e.target) &&
+                sidebar.classList.contains('mobile-active')) {
+                sidebar.classList.remove('mobile-active');
+            }
         });
 
         // Explorer content loader
+        const contentOrder = [
+            'overview',
+            'structure', 's1', 's2', 's3',
+            'substance', 's4', 's5', 's6', 's7',
+            'source', 's8', 's9', 's10', 's11'
+        ];
+
         function loadExplorerContent(contentId) {
             const content = document.getElementById('explorerContent');
             
             // Update active state in sidebar
-            document.querySelectorAll('.explorer-nav-item, .explorer-signal a').forEach(item => {
+            document.querySelectorAll('.explorer-nav-item, .explorer-signal a, .explorer-pillar-header').forEach(item => {
                 item.classList.remove('active');
             });
             const navItem = document.getElementById('nav-' + contentId);
@@ -1426,7 +1490,7 @@
             }
 
             // Close mobile sidebar
-            document.getElementById('explorerSidebar').classList.remove('active');
+            document.getElementById('explorerSidebar').classList.remove('mobile-active');
 
             const contentMap = {
                 'overview': `
@@ -1437,7 +1501,7 @@
                         <div class="guide-pillars">
                             <div class="guide-pillar-item">
                                 <div class="guide-pillar-icon structure">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                                 </div>
                                 <div class="guide-pillar-text">
                                     <h4>Structure (3 signals)</h4>
@@ -1859,6 +1923,30 @@
             };
 
             content.innerHTML = contentMap[contentId] || contentMap['overview'];
+            
+            // Add navigation arrows
+            const currentIndex = contentOrder.indexOf(contentId);
+            const prevIndex = currentIndex > 0 ? currentIndex - 1 : -1;
+            const nextIndex = currentIndex < contentOrder.length - 1 ? currentIndex + 1 : -1;
+            
+            const navArrows = document.createElement('div');
+            navArrows.className = 'explorer-nav-arrows';
+            navArrows.innerHTML = `
+                <a class="nav-arrow-btn ${prevIndex === -1 ? 'disabled' : ''}" 
+                   onclick="${prevIndex !== -1 ? `loadExplorerContent('${contentOrder[prevIndex]}')` : 'return false'}"
+                   ${prevIndex === -1 ? '' : `href="javascript:void(0)"`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    Previous
+                </a>
+                <a class="nav-arrow-btn ${nextIndex === -1 ? 'disabled' : ''}" 
+                   onclick="${nextIndex !== -1 ? `loadExplorerContent('${contentOrder[nextIndex]}')` : 'return false'}"
+                   ${nextIndex === -1 ? '' : `href="javascript:void(0)"`}>
+                    Next
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            `;
+            content.appendChild(navArrows);
+            
             content.scrollTop = 0;
         }
 
