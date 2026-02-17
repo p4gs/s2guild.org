@@ -1,6 +1,6 @@
 # **SOC 2 Reliability Rubric**
 
-**Status**: Open for Comments
+**Status**: Published
 
 **Date**: Feb 15, 2026
 
