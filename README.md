@@ -5,7 +5,7 @@
 A community creating standardized evaluation criteria to help GRC and TPRM practitioners assess how much weight to give a SOC 2 report when making vendor trust decisions.
 
 🌐 **Website:** [s2guild.org](https://s2guild.org)  
-💬 **Community:** [Join Slack](https://join.slack.com/t/soc2qualityguild/shared_invite/zt-3on72t7v8-qgN0~aHuYM4gbDR2uDnRlA) | [GitHub Discussions](https://github.com/SOC-2-Quality-Guild/s2guild.org/discussions)
+💬 **Community:** [Join Slack](https://join.slack.com/t/soc2qualityguild/shared_invite/zt-3on72t7v8-qgN0~aHuYM4gbDR2uDnRlA) 
 
 ---
 
@@ -128,7 +128,6 @@ Our work is open-source (CC BY-SA 4.0), community-governed, and built in public.
 
 ### Join the Community
 - 💬 **Slack** - [Join here](https://join.slack.com/t/soc2qualityguild/shared_invite/zt-3on72t7v8-qgN0~aHuYM4gbDR2uDnRlA) for real-time discussions
-- 💻 **GitHub Discussions** - [Start a conversation](https://github.com/SOC-2-Quality-Guild/s2guild.org/discussions)
 - 🌐 **Website** - [s2guild.org](https://s2guild.org)
 
 ---
@@ -152,16 +151,16 @@ Under the following terms:
 
 ## Acknowledgments
 
-Built by practitioners, for practitioners. Special thanks to the community members who contributed expertise, examples, and feedback during development.
+Built by practitioners, for practitioners. Many thanks to the community members who contribute expertise, examples, mentorshop, and feedback to this growing community.
 
 ---
 
 ## Contact
 
 - 🌐 Website: [s2guild.org](https://s2guild.org)
-- 💬 Community: [Slack](#) | [GitHub](https://github.com/SOC-2-Quality-Guild)
+- 💬 Community: [Join Slack](https://join.slack.com/t/soc2qualityguild/shared_invite/zt-3on72t7v8-qgN0~aHuYM4gbDR2uDnRlA) | [GitHub](https://github.com/SOC-2-Quality-Guild)
 - 📧 Email: [contact info TBD]
 
 ---
 
-**Together, we're building a more transparent, consistent, and quality-driven SOC 2 ecosystem.**
+**Together, we're building a more transparent, consistent, and quality-driven trust ecosystem.**
