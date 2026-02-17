@@ -75,16 +75,6 @@ We welcome contributions from GRC practitioners, TPRM professionals, auditors, a
 4. **Improve the Rubric** - Suggest refinements to evaluation criteria
 5. **Build Tools** - Create automation, templates, or integrations
 
-### Community Projects
-
-Active initiatives the community is working on:
-
-- 🔍 **Concrete examples of each signal** - Real-world patterns to help practitioners recognize quality issues
-- 📝 **Language templates** - Ready-to-use communication templates for vendor conversations
-- ✅ **Quick reference checklist** - One-page structural validation tool
-- 📊 **Scoring framework** - Quantitative ratings for consistent documentation
-- 🌍 **Expand beyond SOC 2** - Quality signals for ISO 27001, HITRUST, PCI, etc.
-
 **→ [View all projects and vote](https://s2guild.org/#projects)**
 
 ---
